@@ -1,0 +1,20 @@
+
+services:
+  flask_app:
+    image: mrsbread/flask_app:latest
+    container_name: flask-app
+    command: >
+      sh -c "python app.py"
+
+  lab_app: 
+    image: mrsbread/lab_app:latest
+    container_name: my-apache-app
+    
+  nginx:
+    image: mrsbread/nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - flask_app
+      - lab_app
+
