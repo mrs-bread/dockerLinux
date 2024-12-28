@@ -39,3 +39,11 @@ nginx_1      | 2024/12/28 07:07:57 [emerg] 1#1: host not found in upstream "flas
 nginx_1      | nginx: [emerg] host not found in upstream "flask_app" in /etc/nginx/nginx.conf:15
 docker1_nginx_1 exited with code 1
 
+
+
+denis@4:~/docker1$ sudo docker run -it mrsbread/flask_app:latest /bin/bash
+root@e4fafa514f92:/# python --version
+bash: python: command not found
+root@e4fafa514f92:/# python3 --version
+bash: python3: command not found
+root@e4fafa514f92:/#
