@@ -1,0 +1,10 @@
+sudo docker-compose up --build
+my-apache-app is up-to-date
+Starting flask-app ... done
+Starting docker1_nginx_1 ... 
+Starting docker1_nginx_1 ... error
+
+ERROR: for docker1_nginx_1  Cannot start service nginx: driver failed programming external connectivity on endpoint docker1_nginx_1 (a9140ce20a563079f05684b62212a9e97bb7ca31ee06efc4a173087643d19fdc): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use
+
+ERROR: for nginx  Cannot start service nginx: driver failed programming external connectivity on endpoint docker1_nginx_1 (a9140ce20a563079f05684b62212a9e97bb7ca31ee06efc4a173087643d19fdc): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use
+ERROR: Encountered errors while bringing up the project.
