@@ -1,0 +1,32 @@
+sudo docker-compose up --build
+Creating network "docker1_default" with the default driver
+Creating flask-app     ... done
+Creating my-apache-app ... done
+Creating docker1_nginx_1 ... done
+Attaching to flask-app, my-apache-app, docker1_nginx_1
+nginx_1      | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx_1      | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+flask-app    | sh: 1: python: not found
+my-apache-app | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+my-apache-app | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+my-apache-app | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+my-apache-app | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+my-apache-app | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+my-apache-app | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+my-apache-app | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+my-apache-app | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+my-apache-app | /docker-entrypoint.sh: Configuration complete; ready for start up
+my-apache-app | 2024/12/28 08:31:57 [emerg] 1#1: no "events" section in configuration
+my-apache-app | nginx: [emerg] no "events" section in configuration
+nginx_1      | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+nginx_1      | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+flask-app exited with code 127
+my-apache-app exited with code 1
+nginx_1      | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+nginx_1      | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx_1      | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx_1      | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx_1      | /docker-entrypoint.sh: Configuration complete; ready for start up
+nginx_1      | 2024/12/28 08:31:57 [emerg] 1#1: host not found in upstream "flask_app" in /etc/nginx/nginx.conf:11
+nginx_1      | nginx: [emerg] host not found in upstream "flask_app" in /etc/nginx/nginx.conf:11
+docker1_nginx_1 exited with code 1
