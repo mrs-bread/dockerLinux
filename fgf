@@ -8,3 +8,34 @@ ERROR: for docker1_nginx_1  Cannot start service nginx: driver failed programmin
 
 ERROR: for nginx  Cannot start service nginx: driver failed programming external connectivity on endpoint docker1_nginx_1 (a9140ce20a563079f05684b62212a9e97bb7ca31ee06efc4a173087643d19fdc): Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use
 ERROR: Encountered errors while bringing up the project.
+
+
+sudo docker-compose up --build
+my-apache-app is up-to-date
+Starting flask-app ... done
+Starting docker1_nginx_1 ... done
+Attaching to my-apache-app, flask-app, docker1_nginx_1
+flask-app    | sh: 1: python: not found
+nginx_1      | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx_1      | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+nginx_1      | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+flask-app exited with code 127
+my-apache-app | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+my-apache-app | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+nginx_1      | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+my-apache-app | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+my-apache-app | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+my-apache-app | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+my-apache-app | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+my-apache-app | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+my-apache-app | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+my-apache-app | /docker-entrypoint.sh: Configuration complete; ready for start up
+nginx_1      | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+nginx_1      | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx_1      | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx_1      | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx_1      | /docker-entrypoint.sh: Configuration complete; ready for start up
+nginx_1      | 2024/12/28 07:07:57 [emerg] 1#1: host not found in upstream "flask_app" in /etc/nginx/nginx.conf:15
+nginx_1      | nginx: [emerg] host not found in upstream "flask_app" in /etc/nginx/nginx.conf:15
+docker1_nginx_1 exited with code 1
+
